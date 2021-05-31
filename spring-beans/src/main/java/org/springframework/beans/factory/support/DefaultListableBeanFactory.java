@@ -170,6 +170,10 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	private final Map<Class<?>, String[]> singletonBeanNamesByType = new ConcurrentHashMap<>(64);
 
 	/** List of bean definition names, in registration order. */
+	/**
+	 *  存放着spring容器启动的时候扫描到的所有需要spring管理的对象, 会将对象名存在这个list中,
+	 *  在创建对象的时候遍历这个 benaName list
+	 */
 	private volatile List<String> beanDefinitionNames = new ArrayList<>(256);
 
 	/** List of names of manually registered singletons, in registration order. */
